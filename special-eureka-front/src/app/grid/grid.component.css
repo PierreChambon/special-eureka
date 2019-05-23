@@ -1,0 +1,11 @@
+.cell{
+    background-color: red;
+    border-color: black;
+    padding: 10px;
+    margin: 5px;
+    width: 50px
+}
+
+.row{
+    margin: 20px
+}
