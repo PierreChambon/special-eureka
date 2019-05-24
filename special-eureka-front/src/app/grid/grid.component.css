@@ -15,7 +15,6 @@
     align-items: center;
     justify-content: center;
     font-size: x-large;
-    background-color: cyan;
 }
 
 .grid{
@@ -25,4 +24,9 @@
     height: 300px;
     margin: auto;
     margin-top: 50px;
+}
+
+app-cell{
+    width : 100%;
+    height: 100%;
 }
