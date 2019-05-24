@@ -24,7 +24,7 @@ export class GridComponent implements OnInit {
     for(let i=0; i<this.number_rows; i++){
       this.grid[i] = []
       for(let j=0; j<this.number_cols; j++){
-        this.grid[i][j] = -1
+        this.grid[i][j] = 5*i + j + 1
       }
     }
   }
