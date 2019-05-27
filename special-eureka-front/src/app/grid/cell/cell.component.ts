@@ -24,6 +24,9 @@ export class CellComponent implements OnInit {
       this.clickedCell.emit(this.cell)
       //console.log(this.cell)
     }
+    else{
+      this.clickedCell.emit(null)
+    }
   }
 
   onCellMouseOver(){
