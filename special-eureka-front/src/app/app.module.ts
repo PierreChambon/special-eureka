@@ -4,14 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GridComponent } from './grid/grid.component';
-import { CellComponent } from './grid/cell/cell.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GridComponent,
-    CellComponent
+    HeaderComponent
   ], 
   imports: [
     BrowserModule,
