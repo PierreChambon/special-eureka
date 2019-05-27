@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Cell } from '../../models/Cell'
 
 @Component({
   selector: 'app-cell',
@@ -7,12 +8,32 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CellComponent implements OnInit {
 
-  @Input() value : number
-  @Input() isGiven : boolean
+  @Input() cell : Cell
+
+  @Output() enterCell : EventEmitter<Cell> = new EventEmitter()
+  @Output() leaveCell : EventEmitter<any> = new EventEmitter()
+  @Output() clickedCell : EventEmitter<any> = new EventEmitter()
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onCellClick(){
+    if (!this.cell.isGiven){
+      this.clickedCell.emit(this.cell)
+      //console.log(this.cell)
+    }
+  }
+
+  onCellMouseOver(){
+    //console.log("Enter")
+    this.enterCell.emit(this.cell)
+  }
+
+  onCellMouseLeave(){
+    //console.log("Leave")
+    this.leaveCell.emit()
   }
 
 }

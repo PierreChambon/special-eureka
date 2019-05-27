@@ -1,5 +1,27 @@
-@import url('../grid.component.css');
+.cell{
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
 
-.alreadyHere{
+.topCell{
+    border-top: 1px solid grey;
+}
+
+.leftCell{
+    border-left :  1px solid grey;
+}
+
+.isGiven{
     color : grey;
+}
+
+.isNotGiven:hover{
+    background-color: rgb(18, 228, 228);
+    cursor: pointer;
 }
