@@ -1,0 +1,8 @@
+<span class="cell" (click)="onCellClick()" (mouseover)="onCellMouseOver()" (mouseleave)="onCellMouseLeave()" [ngClass]="{
+      'isGiven' : cell.isGiven,
+      'isNotGiven' : !cell.isGiven,
+      'topCell' : cell.row == 0,
+      'leftCell' : cell.col == 0
+    }">
+    <span *ngIf="cell.value != -1">{{ cell.value }}</span>
+</span>
