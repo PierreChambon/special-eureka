@@ -15,6 +15,7 @@ export class GridComponent implements OnInit {
   number_cols = 5
   test_grid = [new Cell(0,0,4), new Cell(0,1,7), new Cell(1,1,16), new Cell(3,2,20), new Cell(4,3,12)]
   grid : Cell[][];
+  used_values = []
 
   activeCell = null
   clicked = null
@@ -47,6 +48,7 @@ export class GridComponent implements OnInit {
   fill_grid(){
     for(let cell of this.test_grid){
       this.grid[cell.row][cell.col] = cell
+      this.used_values.push(cell.value)
     }
   }
 
@@ -73,4 +75,30 @@ export class GridComponent implements OnInit {
            (cell.row == this.activeCell.row - 2) && (cell.col == this.activeCell.col - 2)
   }
 
+  leftValues(){
+    let result = [];
+    for(let k = 1; k<=(this.number_rows * this.number_cols); k++){
+      if(this.used_values.indexOf(k) == -1){
+        result.push(k)
+      }
+    }
+    return result
+  }
+
+  onNumberClick(value){
+    const oldValue = this.clicked.value
+    if (this.used_values.indexOf(oldValue) != -1){
+      delete this.used_values[this.used_values.indexOf(oldValue)]
+    }
+    if (value != -1){
+      this.clicked.value = value
+      this.used_values.push(value)
+    }
+    else{
+      this.clicked.value = -1
+    }
+
+  }
+
 }
+

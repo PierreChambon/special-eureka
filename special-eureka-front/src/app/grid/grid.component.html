@@ -1,4 +1,5 @@
 
+
 <div [ngClass]="{'grid' : true}">
   <div class="row" *ngFor="let row of grid">
     <app-cell *ngFor="let cell of row" 
@@ -10,8 +11,9 @@
                    'clickedCell' : cell == clicked }"></app-cell>
   </div>
 </div> 
+ 
 
-
-<!-- <div class="container_number" *ngIf="event">
-  <div *ngFor="let num of left_number" class="number" >{{ num }}</div>
-</div> -->
+<div class="container_number" *ngIf="clicked">
+  <div *ngFor="let value of leftValues()" class="number" (click)="onNumberClick(value)">{{ value }}</div>
+  <div class="number" (click)="onNumberClick(value)">x</div>
+</div>
