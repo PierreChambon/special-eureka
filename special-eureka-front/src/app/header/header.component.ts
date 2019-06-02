@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onSignOut() {
+    this.isAuth = false;
     this.authService.signOutUser();
   }
 
